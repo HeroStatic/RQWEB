@@ -28,7 +28,7 @@ export default {
     },
     isChcek: {
       get() {
-        return this.hasfinishCount === this.todos.length;
+        return this.hasfinishCount === this.todos.length&&this.todos.length>0;
       },
       set(value) {
         this.$emit("queryall", value);
