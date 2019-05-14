@@ -23,7 +23,7 @@
     <div class="center">
      <todos  @add="addTolist" />
      <tolist :todos="todos" @deletelist="deletTolist" />
-     <footerlist/>
+     <footerlist :todos="todos" @queryall="queryAll" @deleisdo="deleteIsDo"    />
     </div>
   </div>
 </template>
@@ -49,6 +49,11 @@ export default {
           },
           {
              things:"回家吃饭",hasfinished:true
+          },
+          {
+             
+             things:"打豆豆",hasfinished:true
+          
           }
         ]
       };
@@ -61,6 +66,16 @@ export default {
       deletTolist(index){
         console.log(index)
         this.todos.splice(index,1)
+      },
+      queryAll(check){
+         this.todos.forEach(item=>{
+           item.hasfinished = check
+         })
+      },
+      deleteIsDo(){
+         this.todos =  this.todos.filter(item=>{
+          return  !item.hasfinished 
+        })
       }
     },
     components:{

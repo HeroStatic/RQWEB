@@ -1,7 +1,7 @@
 <template>
   <div class="todoitem">
     <li>
-      <input type="checkbox" :checked="todo.hasfinished">
+      <input type="checkbox"  v-model="todo.hasfinished">
       {{todo.things}}
       <button @click="handleclick">删除</button>
     </li>
