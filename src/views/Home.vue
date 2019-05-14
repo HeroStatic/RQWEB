@@ -19,7 +19,7 @@
 
 <template>
   <div class="home">
-
+    
     <div class="center">
      <todos  @add="addTolist" />
      <tolist :todos="todos" @deletelist="deletTolist" />
@@ -36,7 +36,8 @@ export default {
   name: 'home',
   data() {
       return {
-        // isCollapse: false
+     
+
         todos:[
           {
              things:"打场高尔夫",hasfinished:true
@@ -78,6 +79,8 @@ export default {
         })
       }
     },
+
+    
     components:{
       todos,
       tolist,
